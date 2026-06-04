@@ -1,0 +1,9 @@
+services:
+  - type: web_service
+    name: delicious-eats-backend
+    env: php
+    branch: main
+    buildCommand: composer install --prefer-dist --no-dev --no-interaction --optimize-autoloader
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    phpVersion: 8.2
+    autoDeploy: true
